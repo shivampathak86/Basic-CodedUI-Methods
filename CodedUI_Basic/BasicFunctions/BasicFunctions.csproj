@@ -53,9 +53,8 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BrowserHandling.cs" />
+    <Compile Include="ImportantMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UIMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Framework\Framework.csproj">

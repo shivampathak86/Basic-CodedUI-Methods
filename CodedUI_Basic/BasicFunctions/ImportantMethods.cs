@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.VisualStudio.TestTools.UITest.Extension;
 using Keyboard = Microsoft.VisualStudio.TestTools.UITesting.Keyboard;
 using Framework;
-
+using System.Diagnostics;
 
 namespace BasicFunctions
 {
@@ -17,22 +17,53 @@ namespace BasicFunctions
     /// This class will be basic operation handling using CodedUI
     /// </summary>
     [CodedUITest]
-    public class BrowserHandling
+    public class ImportantMethods
     {
-        public BrowserHandling()
+        public ImportantMethods()
         {
         }
         [ClassInitialize]
         public static void ClassIntialize(TestContext testContext)
         {
-            Base.Intialize();
+           //Base.Browserwindow= Base.Intialize();
         }
-        [TestMethod]
-        public void HandlingIEFrames()
+        [TestInitialize]
+        public void TestInitialize ()
         {
-            Base.Browserwindow.NavigateToUrl(new Uri("http://www.yatra.com"));
+            BrowserWindow.ClearCookies();
+            Base.Browserwindow= Base.Intialize(new Uri("https://www.hdfcbank.com"));
+        }
+        [TestCleanup]
+        public void TestCleanUp()
+        {
+            Base.CleanUp();
+        }
+        [TestCategory("Basic Functions")]
+        [TestMethod]
+        [Description("This test will navigate to Different URL from already opened browser Instance")]
+        [Owner("Shivam Pathak")]
+        public void HandlingNavigateToUrlMethod()
+        {
+            Playback.PlaybackSettings.LoggerOverrideState = HtmlLoggerState.AllActionSnapshot;
+            
+            Base.Browserwindow.NavigateToUrl(new Uri("http://www.google.com"));
+            
           
         }
+
+        [TestCategory("Basic Functions")]
+        [Description("This test will click on Image that comes on webpage like popup ")]
+        [Owner("Shivam Pathak")]
+        [TestMethod]
+        public void ClickingonImagePopUp()
+        {
+
+           
+
+            ImagPopup.ClickingOnImagePopup();//.NavigateToNewHandle().ComeBacktoDefaultHandle();
+
+        }
+
 
         #region Additional test attributes
 

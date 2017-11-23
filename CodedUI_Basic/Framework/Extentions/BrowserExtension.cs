@@ -23,9 +23,13 @@ namespace Framework.Extentions
                 BrowserWindow.CurrentBrowser = "firefox";
 
             }
-            else
+            else if(browser==Browser.IE)
             {
                 BrowserWindow.CurrentBrowser = "IE"; 
+            }
+            else
+            {
+                BrowserWindow.CurrentBrowser = "IE";
             }
         }
 
