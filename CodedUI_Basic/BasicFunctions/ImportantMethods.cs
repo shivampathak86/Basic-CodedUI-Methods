@@ -9,6 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.VisualStudio.TestTools.UITest.Extension;
 using Keyboard = Microsoft.VisualStudio.TestTools.UITesting.Keyboard;
 using Framework;
+using BasicFunctions;
 using System.Diagnostics;
 
 namespace BasicFunctions
@@ -19,14 +20,8 @@ namespace BasicFunctions
     [CodedUITest]
     public class ImportantMethods
     {
-        public ImportantMethods()
-        {
-        }
-        [ClassInitialize]
-        public static void ClassIntialize(TestContext testContext)
-        {
-           //Base.Browserwindow= Base.Intialize();
-        }
+       
+       
         [TestInitialize]
         public void TestInitialize ()
         {
@@ -56,6 +51,7 @@ namespace BasicFunctions
         [Owner("Shivam Pathak")]
         [TestMethod]
         public void ClickingonImagePopUp()
+
         {
 
            
@@ -64,26 +60,38 @@ namespace BasicFunctions
 
         }
 
+        [TestCategory("Basic Functions")]
+        [Description(" ")]
+        [Owner("Shivam Pathak")]
+        [TestMethod]
+        public void HandlingMutipleTabs()
+        {
 
-        #region Additional test attributes
+            HandlingBrowserWindow.ClickingOnImagePopup().Click_on_loginButtn().Clicking_Control_On_NewTab();
 
-        // You can use the following additional attributes as you write your tests:
 
-        ////Use TestInitialize to run code before running each test 
-        //[TestInitialize()]
-        //public void MyTestInitialize()
-        //{        
-        //    // To generate code for this test, select "Generate Code for Coded UI Test" from the shortcut menu and select one of the menu items.
-        //}
 
-        ////Use TestCleanup to run code after each test has run
-        //[TestCleanup()]
-        //public void MyTestCleanup()
-        //{        
-        //    // To generate code for this test, select "Generate Code for Coded UI Test" from the shortcut menu and select one of the menu items.
-        //}
+        }
 
-        #endregion
+[TestMethod]
+        public void Comparing_AreSame_and_IsEqual()
+        {
+            string a = "hello!";
+            string b = a;
+
+            string c = "Hello 2!";
+            string d = "Hello 2!";
+
+            Assert.AreSame(c, d, "The test will fail");
+
+            Assert.AreEqual(b, a); // this test will fail
+
+            Assert.AreEqual(d, c);// this test will pass
+
+            
+           
+        }
+
 
         /// <summary>
         ///Gets or sets the test context which provides

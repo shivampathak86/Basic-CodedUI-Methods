@@ -8,6 +8,7 @@ using Microsoft.VisualStudio.TestTools.UITest;
 using Microsoft.VisualStudio.TestTools.UITesting.HtmlControls;
 using Framework.Extentions;
 using System.Diagnostics;
+using Microsoft.VisualStudio.TestTools.UITest.Extension;
 
 namespace Framework
 {
@@ -23,7 +24,8 @@ namespace Framework
             process = Browserwindow.Process;
             Browserwindow.Maximized = true;
             Browserwindow.CloseOnPlaybackCleanup = false;
-
+            Browserwindow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+           
             return Browserwindow;
 
         }
@@ -60,7 +62,6 @@ namespace Framework
             }
         }
 
-        public static object Browerwindow { get; internal set; }
     }
 }
     
