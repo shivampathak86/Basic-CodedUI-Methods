@@ -64,7 +64,7 @@ namespace BasicFunctions
         [Description(" ")]
         [Owner("Shivam Pathak")]
         [TestMethod]
-        public void HandlingMutipleTabs()
+        public void Handling_Browser_Popup()
         {
 
             HandlingBrowserWindow.ClickingOnImagePopup().Click_on_loginButtn().Clicking_Control_On_NewTab();
@@ -74,7 +74,9 @@ namespace BasicFunctions
         }
 
 [TestMethod]
+[Timeout(5000)]
         public void Comparing_AreSame_and_IsEqual()
+
         {
             string a = "hello!";
             string b = a;
@@ -91,7 +93,13 @@ namespace BasicFunctions
             
            
         }
+[TestMethod] 
+public void Handling_Multiple_BrowserWindow_Tabs()
+        {
 
+            Base.Browserwindow.NavigateToUrl(new Uri("http://www.google.com"));
+                Base.handlingBrowserTabs.Click_On_NewTab().Navigating_new_Site_in_newtab();
+        }
 
         /// <summary>
         ///Gets or sets the test context which provides

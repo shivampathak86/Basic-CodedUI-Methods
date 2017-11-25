@@ -61,6 +61,16 @@ namespace Framework
 
             }
         }
+     
+    public static HandlingBrowserTabs handlingBrowserTabs
+        {
+
+            get
+            {
+                return new HandlingBrowserTabs();
+            }
+        }
+
 
     }
 }

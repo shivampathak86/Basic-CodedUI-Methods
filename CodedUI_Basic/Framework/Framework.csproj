@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Base.cs" />
     <Compile Include="Extentions\BrowserExtension.cs" />
+    <Compile Include="HandlingBrowserTabs.cs" />
     <Compile Include="HandlingBrowserWindow.cs" />
     <Compile Include="HelperFiles\ExcelReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
