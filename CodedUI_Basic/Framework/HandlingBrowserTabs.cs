@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UITesting.WinControls;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +22,9 @@ namespace Framework
             WinButton newtabbutton = new WinButton(tablist);
             newtabbutton.SearchProperties.Add(WinButton.PropertyNames.Name, "New tab (Ctrl+T)");
             newtabbutton.WaitForControlEnabled();
+           Image img = newtabbutton.CaptureImage();
+            img.Save("\"c:\\capture.jpeg\"", ImageFormat.Jpeg);
+            img.Dispose();
             Mouse.Click(newtabbutton);
 
             return new HandlingBrowserTabs();
